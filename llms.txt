@@ -1,9 +1,12 @@
-# ai-pose-gallery 繁中版
+# AI 繪圖參考圖庫 繁中版
 
-> AI 生圖用的人物姿勢參考圖：1,439 張無臉灰色人台線稿（3:4，900x1200 PNG），288 個姿勢 × 5 個角度，名稱為繁體中文。原站 https://ai-pose-gallery.pages.dev/（作者 ギア），圖片由原站提供。
+> AI 生圖、生影片用的參考圖，四個圖庫，名稱為繁體中文：姿勢線稿（無臉灰色人台，1,439 張，288 個姿勢 × 5 個角度）、同一批姿勢的深度圖（1,439 張）、服裝圖（1,407 套，無人物）、臉部圖（1,499 張 AI 虛構人物，CC0）。圖片由原站提供：https://ai-pose-gallery.pages.dev/ 、https://ai-pose-depth-gallery.pages.dev/ 、https://ai-costume-gallery.pages.dev/ （作者 ギア），https://ai-portrait-gallery.pages.dev/ （作者 あぎ）。
 
-- [poses.json](https://yazelin.github.io/ai-pose-gallery-zh-tw/poses.json)：全部圖片的資料，欄位 id、series、pose_no、category、name、angle、thumb、image（原尺寸 PNG 網址）
-- [使用說明 SKILL.md](https://raw.githubusercontent.com/yazelin/ai-pose-gallery-zh-tw/main/skills/pose-reference/SKILL.md)：怎麼搜尋、下載、當參考圖，以及使用規範
-- [查詢腳本 pose.py](https://raw.githubusercontent.com/yazelin/ai-pose-gallery-zh-tw/main/skills/pose-reference/pose.py)：只用 Python 標準函式庫
+- [pose/poses.json](https://yazelin.github.io/ai-reference-gallery-zh-tw/pose/poses.json)：姿勢線稿，欄位 id、series、pose_no、category、name、angle、thumb、image
+- [depth/poses.json](https://yazelin.github.io/ai-reference-gallery-zh-tw/depth/poses.json)：姿勢深度圖，欄位同上，id 與線稿相同
+- [costume/costumes.json](https://yazelin.github.io/ai-reference-gallery-zh-tw/costume/costumes.json)：服裝，欄位 id、category、keywords（英文）、thumb、preview、image；[costume/synonyms.json](https://yazelin.github.io/ai-reference-gallery-zh-tw/costume/synonyms.json) 是中文詞對英文關鍵字
+- [portrait/faces.json](https://yazelin.github.io/ai-reference-gallery-zh-tw/portrait/faces.json)：臉部，欄位 id、section（face／styling）、hair、style、width、height、thumb、image
+- [使用說明 SKILL.md](https://raw.githubusercontent.com/yazelin/ai-reference-gallery-zh-tw/main/skills/reference-gallery/SKILL.md)：怎麼搜尋、下載、當參考圖，以及使用規範
+- [查詢腳本 ref.py](https://raw.githubusercontent.com/yazelin/ai-reference-gallery-zh-tw/main/skills/reference-gallery/ref.py)：只用 Python 標準函式庫
 
-規範：圖片可免費用於自己的作品（含商用），禁止再散布圖片本身；不得用於真實人物、未成年人或違反公序良俗的用途。
+規範：圖片可免費用於自己的作品（含商用），禁止再散布圖片本身；姿勢、depth、服裝三庫禁止批次下載（含自動抓取），只下載當次要用的幾張；不得用於真實人物、未成年人或違反公序良俗的用途。
