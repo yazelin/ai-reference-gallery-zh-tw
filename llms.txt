@@ -1,6 +1,6 @@
 # AI 繪圖參考圖庫 繁中版
 
-> AI 生圖、生影片用的參考圖，四個圖庫，名稱為繁體中文：姿勢線稿（無臉灰色人台，1,439 張，288 個姿勢 × 5 個角度）、同一批姿勢的深度圖（1,439 張）、服裝圖（1,407 套，無人物）、臉部圖（1,499 張 AI 虛構人物，CC0）。圖片由原站提供：https://ai-pose-gallery.pages.dev/ 、https://ai-pose-depth-gallery.pages.dev/ 、https://ai-costume-gallery.pages.dev/ （作者 ギア），https://ai-portrait-gallery.pages.dev/ （作者 あぎ）。
+> AI 生圖、生影片用的參考圖，四個圖庫，名稱為繁體中文：姿勢線稿（無臉灰色人台，1,439 張，288 個姿勢，大多有 5 個角度）、同一批姿勢的深度圖（1,439 張）、服裝圖（1,407 套，無人物）、臉部圖（1,499 張 AI 虛構人物，CC0）。圖片由原站提供：https://ai-pose-gallery.pages.dev/ 、https://ai-pose-depth-gallery.pages.dev/ 、https://ai-costume-gallery.pages.dev/ （作者 ギア），https://ai-portrait-gallery.pages.dev/ （作者 あぎ）。
 
 - [pose/poses.json](https://yazelin.github.io/ai-reference-gallery-zh-tw/pose/poses.json)：姿勢線稿，欄位 id、series、pose_no、category、name、angle、thumb、image
 - [depth/poses.json](https://yazelin.github.io/ai-reference-gallery-zh-tw/depth/poses.json)：姿勢深度圖，欄位同上，id 與線稿相同
