@@ -6,7 +6,7 @@ AI 繪圖用的四個日文參考圖庫，翻成繁體中文、放在同一個�
 
 | 圖庫 | 原站 | 作者 | 內容 | 繁中版 |
 |---|---|---|---|---|
-| 姿勢集 POSE-DB-01 | <https://ai-pose-gallery.pages.dev/> | ギア（[X @giaaibusi](https://x.com/giaaibusi)） | 無臉灰色人台線稿 1,439 張，288 個姿勢 × 5 個角度 | [`/pose/`](https://yazelin.github.io/ai-reference-gallery-zh-tw/pose/) |
+| 姿勢集 POSE-DB-01 | <https://ai-pose-gallery.pages.dev/> | ギア（[X @giaaibusi](https://x.com/giaaibusi)） | 無臉灰色人台線稿 1,439 張，288 個姿勢，大多有 5 個角度 | [`/pose/`](https://yazelin.github.io/ai-reference-gallery-zh-tw/pose/) |
 | depth 姿勢集 POSE-DB-02 | <https://ai-pose-depth-gallery.pages.dev/> | ギア | 同一批姿勢的深度圖 1,439 張 | [`/depth/`](https://yazelin.github.io/ai-reference-gallery-zh-tw/depth/) |
 | 服裝集 COSTUME-DB-01 | <https://ai-costume-gallery.pages.dev/> | ギア | 無人物的服裝圖 1,407 套 | [`/costume/`](https://yazelin.github.io/ai-reference-gallery-zh-tw/costume/) |
 | AI 模特兒臉部資料庫 | <https://ai-portrait-gallery.pages.dev/> | あぎ（[X @agi_aibusi](https://x.com/agi_aibusi)） | AI 虛構人物 1,499 張（臉部 893、造型 606），CC0 1.0 | [`/portrait/`](https://yazelin.github.io/ai-reference-gallery-zh-tw/portrait/) |
@@ -51,7 +51,7 @@ GitHub Actions 每天台灣時間 03:37 抓一次四個原站的頁面與資料�
 
 1. 介面文字、分類、姿勢名稱、髮型名稱從日文翻成繁體中文，對照表在 `zh-tw.json`，四站共用。服裝站的搜尋對照也一起翻，所以可以用中文搜尋服裝。
 2. 圖片沒有複製進來。縮圖、原尺寸圖、下載連結都指回原站，CSP 的 `img-src` 加上原站網域讓圖片載得到。原站注意事項禁止圖片本身的再散布與轉載，所以這個 repo 和 Pages 都不放任何圖片。
-3. 移除原站的流量統計：姿勢、depth、服裝三站的 Cloudflare Web Analytics beacon，以及臉部站送到 `/api/hit` 的下載次數統計，避免把繁中版的流量算進原作者的統計。臉部站的即時排行也不抓，改用原站打包時的 `ranking.js`。
+3. 移除原站的流量統計：姿勢、depth、服裝三站的 Cloudflare Web Analytics beacon 拿掉，避免把繁中版的流量算進原作者的統計。臉部站的看圖與下載統計（`/api/hit`）和即時排行（`/api/ranking`）是相對路徑，在這裡會打到 github.io 而失敗，所以統計整個關掉，排行直接用原站打包時的 `ranking.js`。
 4. 每頁頂端加一行說明，註明原站與作者，並連回入口頁與這個 repo。
 5. 多產出各庫的 JSON 資料檔和 `llms.txt`（見上一節）。
 6. 入口頁 `hub/index.html` 是自己寫的，不來自原站。

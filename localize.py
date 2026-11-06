@@ -126,10 +126,11 @@ def portrait(tr, cache):
     out = {'data/images.js': 'window.GALLERY_IMAGES = ' + json.dumps(data, ensure_ascii=False, indent=1) + ';\n'}
     for f in ('data/ranking.js', 'assets/style.css', 'index.html', 'assets/app.js'):
         out[f] = tr.text(src[f])
-    # 使用次數統計與即時排行走原站的 /api，鏡像版不送也不抓，排行用打包時的 ranking.js
+    # 使用次數統計（/api/hit）與即時排行（/api/ranking）是相對路徑，在鏡像上會打到 github.io 而 404，
+    # 到不了原站。統計整個關掉，排行直接用打包時的 ranking.js
     app = out['assets/app.js']
-    app = app.replace('fetch("/api/hit"', 'false && fetch("/api/hit"').replace('window.fetch) {\n    var rankTimer', 'false) {\n    var rankTimer')
-    assert app.count('false && fetch("/api/hit"') == 1 and app.count('false) {\n    var rankTimer') == 1, '人臉站 app.js 結構變了'
+    app = app.replace('function hit(ev, it) {', 'function hit(ev, it) { return;').replace('window.fetch) {\n    var rankTimer', 'false) {\n    var rankTimer')
+    assert app.count('function hit(ev, it) { return;') == 1 and app.count('false) {\n    var rankTimer') == 1, '人臉站 app.js 結構變了'
     out['assets/app.js'] = app
     out['index.html'] = finish_html(out['index.html'], c['origin'], c['author'])
     faces = [{'id': d['id'], 'section': d['section'], 'hair': d['hair'], 'style': d['style'], 'width': d['w'],
